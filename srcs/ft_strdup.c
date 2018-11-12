@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alfiumic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/12 12:29:17 by alfiumic          #+#    #+#             */
-/*   Updated: 2018/11/12 17:38:23 by alfiumic         ###   ########.fr       */
+/*   Created: 2018/11/07 18:20:31 by alfiumic          #+#    #+#             */
+/*   Updated: 2018/11/07 19:08:50 by alfiumic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_h.h"
+#include <stdlib.h>
 
-void	ft_bzero(void *s, size_t n)
+int		ft_strlen(const char *s);
+
+char	*ft_strcpy(char *dst, const char *src);
+
+char	*ft_strdup(const char *s1)
 {
-	size_t			i;
-	unsigned char	*str;
+	int		size_s1;
+	char	*dup;
 
-	i = 0;
-	str = (unsigned char *)s;
-	while (i < n)
-	{
-		str[i] = '\0';
-		i++;
-	}
+	size_s1 = ft_strlen(s1);
+	if (!(dup = (char *)malloc(sizeof(char) * (size_s1) + 1)))
+		return (NULL);
+	return (ft_strcpy(dup, s1));
 }

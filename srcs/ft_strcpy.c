@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alfiumic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/12 12:29:17 by alfiumic          #+#    #+#             */
-/*   Updated: 2018/11/12 17:38:23 by alfiumic         ###   ########.fr       */
+/*   Created: 2018/11/07 18:31:01 by alfiumic          #+#    #+#             */
+/*   Updated: 2018/11/07 18:33:07 by alfiumic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_h.h"
-
-void	ft_bzero(void *s, size_t n)
+char	*strcpy(char *dst, const char *src)
 {
-	size_t			i;
-	unsigned char	*str;
+	int		i;
 
 	i = 0;
-	str = (unsigned char *)s;
-	while (i < n)
+	while (src[i])
 	{
-		str[i] = '\0';
+		dst[i] = dst[i];
 		i++;
 	}
+	dst[i] = '\0';
+	return (dst);
 }

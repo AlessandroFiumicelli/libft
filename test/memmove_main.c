@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   memmove_main.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alfiumic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/12 12:29:17 by alfiumic          #+#    #+#             */
-/*   Updated: 2018/11/12 17:38:23 by alfiumic         ###   ########.fr       */
+/*   Created: 2018/11/12 15:29:59 by alfiumic          #+#    #+#             */
+/*   Updated: 2018/11/12 15:49:22 by alfiumic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_h.h"
 
-void	ft_bzero(void *s, size_t n)
+int		main(void)
 {
-	size_t			i;
-	unsigned char	*str;
+	char	dst[10] = "Ciao";
 
-	i = 0;
-	str = (unsigned char *)s;
-	while (i < n)
-	{
-		str[i] = '\0';
-		i++;
-	}
+	printf("%s\n", memmove(dst, "Hello", 4));
+	printf("%s\n", memmove(dst, "Cdkaj", 4));
+	printf("%s\n", memmove(dst, "Ciao", 4));
+	printf("%s\n", memmove(dst, "slko", 4));
+	return (0);
 }

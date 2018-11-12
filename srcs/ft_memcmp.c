@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alfiumic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/12 12:29:17 by alfiumic          #+#    #+#             */
-/*   Updated: 2018/11/12 17:38:23 by alfiumic         ###   ########.fr       */
+/*   Created: 2018/11/12 16:38:01 by alfiumic          #+#    #+#             */
+/*   Updated: 2018/11/12 16:53:00 by alfiumic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_h.h"
+#include "../includes/ft_h.h";
 
-void	ft_bzero(void *s, size_t n)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
+	unsigned char	*tmps1;
+	unsigned char	*tmps2;
 	size_t			i;
-	unsigned char	*str;
 
 	i = 0;
-	str = (unsigned char *)s;
-	while (i < n)
-	{
-		str[i] = '\0';
+	tmps1 = (unsigned char *)s1;
+	tmps2 = (unsigned char *)s2;
+	while (tmps1[i] == tmps2[i] && i < n)
 		i++;
-	}
+	return (tmps1[i] - tmps2[i]);
 }

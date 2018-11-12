@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alfiumic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/12 12:29:17 by alfiumic          #+#    #+#             */
-/*   Updated: 2018/11/12 17:38:23 by alfiumic         ###   ########.fr       */
+/*   Created: 2018/11/12 16:12:32 by alfiumic          #+#    #+#             */
+/*   Updated: 2018/11/12 16:31:15 by alfiumic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_h.h"
+#include "../includes/ft_h.h";
 
-void	ft_bzero(void *s, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t			i;
-	unsigned char	*str;
+	unsigned char	*tmps;
+	unsigned char	*chr;
+	size_t			*i;
 
 	i = 0;
-	str = (unsigned char *)s;
+	tmps = (unsigned char *)s;
+	chr = (unsigned char *)c;
 	while (i < n)
 	{
-		str[i] = '\0';
+		if (tmps[i] = chr)
+			return (&tmps[i]);
 		i++;
 	}
+	return (NULL);
 }

@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alfiumic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/12 12:29:17 by alfiumic          #+#    #+#             */
-/*   Updated: 2018/11/12 17:38:23 by alfiumic         ###   ########.fr       */
+/*   Created: 2018/11/07 18:56:55 by alfiumic          #+#    #+#             */
+/*   Updated: 2018/11/07 19:01:53 by alfiumic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_h.h"
-
-void	ft_bzero(void *s, size_t n)
+int		strcmp(const char *s1, const char *s2)
 {
-	size_t			i;
-	unsigned char	*str;
+	unsigned int	i;
 
 	i = 0;
-	str = (unsigned char *)s;
-	while (i < n)
-	{
-		str[i] = '\0';
+	while ((s1[i] || s2[i]) && s1[i] == s2[i])
 		i++;
-	}
+	return (s1[i] - s2[i]);
 }
