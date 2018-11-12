@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alfiumic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/12 18:01:30 by alfiumic          #+#    #+#             */
-/*   Updated: 2018/11/12 18:45:56 by alfiumic         ###   ########.fr       */
+/*   Created: 2018/11/12 18:50:20 by alfiumic          #+#    #+#             */
+/*   Updated: 2018/11/12 19:31:47 by alfiumic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_h.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	unsigned int	i;
+	size_t	len;
 
-	i = 0;
-	while (s[i])
+	len = ft_strlen(s) + 1;
+	while (len > 0)
 	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i++;
+		if (s[len] == (char)c)
+			return ((char *)&s[len]);
+		len--;
 	}
-	if (s[i] == (char)c)
-		return ((char *)&s[i]);
+	if (s[0] == (char)c)
+		return ((char *)s);
 	return (NULL);
 }

@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alfiumic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/12 18:01:30 by alfiumic          #+#    #+#             */
-/*   Updated: 2018/11/12 18:45:56 by alfiumic         ###   ########.fr       */
+/*   Created: 2018/11/12 19:26:58 by alfiumic          #+#    #+#             */
+/*   Updated: 2018/11/12 19:56:19 by alfiumic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_h.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strstr(const char *haystack, const char *needle)
 {
-	unsigned int	i;
+	size_t	i;
+	size_t	j;
+	size_t	k;
 
 	i = 0;
-	while (s[i])
+	if (needle[i] == '\0')
+		return ((char *)haystack);
+	while (haystack[i])
 	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
+		j = 0;
+		k = i;
+		while (haystack[i] == needle[j])
+		{
+			if (!(needle[j]))
+				return ((char *)haystack[k]);
+			i++;
+			j++;
+		}
 		i++;
 	}
-	if (s[i] == (char)c)
-		return ((char *)&s[i]);
 	return (NULL);
 }
