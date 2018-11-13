@@ -26,17 +26,21 @@ size_t			ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	srclen;
 	size_t	dstlen;
+	size_t	dlen;
+	size_t	slen;
 
 	srclen = ft_strlen(src);
-	dstlen = ft_strnlen(dst);
+	dstlen = ft_strnlen(dst, size);
 	if (dstlen == size)
 		return (size + srclen);
-	if (srclen < size - dstlen)
-		ft_memcpy(dst + dstlen, src, srclen + 1);
-	else
+	dlen = dstlen;
+	slen = 0;
+	while (slen < size - dstlen - 1 && src[slen])
 	{
-		ft_memcpy(dst + dstlen, src, srclen - 1);
-		dst[dstlen + size - 1] = '\0';
+		dst[dlen] = src[slen];
+		dlen++;
+		slen++;
 	}
+	dst[dlen] = '\0'
 	return (dstlen + srclen);
 }
