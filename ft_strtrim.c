@@ -12,21 +12,40 @@
 
 #include "libft.h"
 
+static int	is_whites(char const *str)
+{
+	int len;
+
+	len = 0;
+	while (str[len])
+	{
+		if (str[len] != ' ' && str[len] != '\n' && str[len] != '\t')
+			return (0);
+		len++;
+	}
+	return (1);
+}
+
 char	*ft_strtrim(char const *s)
 {
-	char			*str;
+	char					*str;
 	unsigned int	start;
-	size_t			len;
+	size_t				len;
 
+	if (!s)
+		return (NULL);
 	start = 0;
-	len = ft_strlen(s);
+	len = ft_strlen(s) - 1;
+	if (is_whites(s))
+	{
+		str = ft_memalloc(1);
+		return (str);
+	}
 	while (s[start] == 32 || s[start] == '\t' || s[start] == '\n')
 		start++;
-	if (s[len - 1] == 32 || s[len - 1] == '\t' || s[len - 1] == '\n')
-		len--;
 	while (s[len] == 32 || s[len] == '\t' || s[len] == '\n')
 		len--;
-	if (!(str = ft_strsub(s, start, len)))
+	if (!(str = ft_strsub(s, start, len - start + 1)))
 		return (NULL);
 	return (str);
 }

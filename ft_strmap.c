@@ -18,7 +18,7 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	size_t			i;
 	size_t			len;
 
-	if (s == NULL && f == NULL)
+	if (!s)
 		return (NULL);
 	i = 0;
 	len = ft_strlen(s);
