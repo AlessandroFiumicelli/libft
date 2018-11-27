@@ -6,7 +6,7 @@
 #    By: alfiumic <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/07 18:02:11 by alfiumic          #+#    #+#              #
-#    Updated: 2018/11/27 18:05:14 by alfiumic         ###   ########.fr        #
+#    Updated: 2018/11/27 18:12:32 by alfiumic         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -151,6 +151,8 @@ OBJECT = ft_memset.o\
 		 ft_custom_strlen.o\
 		 ft_custom_strcpy.o\
 		 ft_custom_strcat.o\
+
+.PHONY: all clean fclean re
 
 all: $(NAME)
 
