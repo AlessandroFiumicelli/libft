@@ -6,7 +6,7 @@
 #    By: alfiumic <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/07 18:02:11 by alfiumic          #+#    #+#              #
-#    Updated: 2018/11/27 12:27:41 by alfiumic         ###   ########.fr        #
+#    Updated: 2018/11/27 18:05:14 by alfiumic         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -157,18 +157,26 @@ all: $(NAME)
 $(NAME): $(OBJECT)
 	@ /bin/echo -n "Creating library => "
 	@ if ar rc $(NAME) $(OBJECT) ; \
-		then /bin/echo ✅; \
+		then /bin/echo ✅ ; \
 		else /bin/echo ❌ ; fi
 	@ ranlib $(NAME)
 	@ echo "Finished"
 
 $(OBJECT):
-	gcc -c -Werror -Wall -Wextra $(SOURCE)
+	@ gcc -c -Werror -Wall -Wextra $(SOURCE)
 
 clean:
-	/bin/rm -f $(OBJECT)
+	@ /bin/echo -n "Deleting Object file =>"
+	@ if /bin/rm -f $(OBJECT) ; \
+		then /bin/echo ✅ ; \
+		else /bin/echo ❌ ; fi
+	@ echo "Finished"
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@ /bin/echo -n "Deleting library =>"
+	@ if /bin/rm -f $(NAME); \
+		then /bin/echo ✅ ; \
+		else /bin/echo ❌ ; fi
+	@ echo "Finished"
 
 re: fclean all
