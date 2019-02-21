@@ -6,7 +6,7 @@
 #    By: alfiumic <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/07 18:02:11 by alfiumic          #+#    #+#              #
-#    Updated: 2019/02/21 13:03:44 by alfiumic         ###   ########.fr        #
+#    Updated: 2019/02/21 14:43:16 by alfiumic         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,6 +80,7 @@ SRCS = srcs/ft_memset.c\
 		 srcs/ft_custom_strlen.c\
 		 srcs/ft_custom_strcpy.c\
 		 srcs/ft_custom_strcat.c\
+		 srcs/get_next_line.c\
 
 OBJ = $(addprefix obj/,$(notdir $(SRCS:.c=.o)))
 DEP = $(addprefix .d/,$(notdir $(SRCS:.c=.d)))
